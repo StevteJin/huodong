@@ -1,0 +1,217 @@
+/*整体框架*/
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.por {
+    position: relative;
+}
+
+.poa {
+    position: absolute;
+}
+
+.fff {
+    color: #FFF;
+}
+
+/*新图标*/
+
+.dujiaico,
+.zhiboico,
+.tupianico,
+.jieduico,
+.cehuaico,
+.zhuanlanico {
+    background: url(http://mat1.gtimg.com/www/icon/qqicon1.0.0.png) no-repeat;
+}
+
+.dujiaico {
+    padding-left: 32px;
+    background-position: left top;
+}
+
+.zhiboico {
+    padding-left: 32px;
+    background-position: left -50px;
+}
+
+.tupianico {
+    padding-right: 18px;
+    background-position: right -99px;
+}
+
+.jieduico {
+    padding-left: 32px;
+    background-position: left -199px;
+}
+
+.cehuaico {
+    padding-left: 32px;
+    background-position: left -248px;
+}
+
+.zhuanlanico {
+    padding-left: 32px;
+    background-position: left -298px;
+}
+
+.t {
+    background: url("http://mat1.gtimg.com/www/iskin960/tico.png") no-repeat right center;
+    padding-right: 13px;
+}
+
+.v {
+    background: url("http://mat1.gtimg.com/news/base2011/img/i.png") no-repeat right -214px;
+    padding-right: 23px
+}
+
+/*默认字体样式*/
+
+.f12 {
+    font-size: 12px;
+}
+
+.f14 {
+    font-size: 14px;
+}
+
+.f16 {
+    font-size: 16px;
+}
+
+.f18 {
+    font-size: 18px;
+}
+
+.f20 {
+    font-size: 20px;
+}
+
+.f24 {
+    font-size: 24px;
+}
+
+.f30 {
+    font-size: 30px;
+}
+
+.f36 {
+    font-size: 36px;
+}
+
+.lh22 {
+    line-height: 22px;
+}
+
+.lh1_6 {
+    line-height: 1.6em;
+}
+
+.lh1_8 {
+    line-height: 1.8em;
+}
+
+.lh24 {
+    line-height: 24px;
+}
+
+.lh26 {
+    line-height: 26px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.wryh {
+    font-family: '微软雅黑';
+}
+
+.heiti {
+    font-family: '黑体';
+}
+
+.indent {
+    text-indent: 2em;
+}
+
+.mid {
+    text-align: center;
+}
+
+
+
+#copyright_table_zt {
+    width: 960px !important;
+    margin: 0 auto !important;
+    background: none !important;
+}
+
+
+/*重写标题栏样式*/
+
+
+.mod_zt_2 {
+    border: none;
+}
+
+
+
+.mod_zt_2 .hd .tit i {
+    display: none;
+    padding-left: 0;
+}
+
+.mod_zt_2 .hd {
+    background: none;
+    border-bottom: 1px solid #dbe0ea;
+    height: 33px;
+    margin-bottom: 15px;
+}
+
+.mod_zt_2 .hd .tit {
+    font-size: 18px;
+    color: #333;
+    background: none;
+    line-height: 1.6em;
+    font-weight: normal;
+}
+
+#ztg_1 {
+    border: 1px solid #e1e1e1;
+}
+
+#ztg_1 .col_3 {
+    width: 240px;
+}
+
+
+
+
+h2 a {
+    font-family: '微软雅黑'
+}
+
+
+
+
+
+
+
+/*
+消息列表
+*/
+.dujia {
+    background: url(http://mat1.gtimg.com/tech/00Jamesdu/2014/moren/dj.png) right 5px no-repeat;
+    padding-right: 40px;
+}
+
+#ztc_13 {
+    padding-left: 10px;
+}

@@ -1,0 +1,28 @@
+/*reset*/
+body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, hr, form, input, button, p{ margin:0; padding:0; }
+body{font: 12px/1.75 \5b8b\4f53, sans-serif;}
+img { border:none;}
+cite,em,i{font-style:normal;}
+ol, ul, li { list-style:none;}
+legend{color:#000;}
+h1, h2, h3, h4, h5, h6{ font-size:100%;font-weight:normal;}
+button, input, select, textarea {font-size: 100%;}
+input{font-size:12px;color:#333;}
+html{overflow-y: scroll; }
+a:link,a:visited{text-decoration:none;}
+a:hover,a:active{text-decoration:underline;}
+.pub_time{color:#bab9b9;}
+/* 公共 */
+.pub_time{font-size:12px;}
+
+
+/* 字体颜色 */
+body{ color:#333;}
+a:link{color:#333;}
+a:visited{color:#800080;}
+a:hover{color:#cc0000;}
+.pub_time{color:#9C9C9C;}
+.color_red,a:link.color_red,a.color_red:hover,a.color_red:active,a.color_red:visited{color:#BC2D09;}
+.color_black,a:link.color_black,a.color_black:active,a.color_black:hover,a.color_black:visited{color:#333;}
+a.more{color:#1044BA;}
+a.more:visited{color:#1044BA;}
