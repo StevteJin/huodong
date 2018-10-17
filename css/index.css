@@ -70,7 +70,7 @@
     padding: 0 10px;
     display: inline;
     border-right: 1px solid #666;
-    cursor: pointer;
+    cursor: pointer;float: left;
 }
 
 .nav_zt a {
@@ -101,7 +101,7 @@ li.end {
     height: 45px !important;
     overflow: hidden !important;
     display: block;
-    float: left;
+    
     text-align: center;
     padding: 0 !important;
 }
