@@ -35,6 +35,8 @@ $(function () {
             document.getElementById('lunbo').innerHTML=focusHtml;
             //视频
             var videoUrl=result.data.cur.video;
+            var videoImg=result.data.cur.thumb;
+            $("#container").attr("poster",videoImg);
             //初始化视频
             let player = videojs('container',{
                 //像data-setup那样设置的参数
@@ -67,16 +69,18 @@ $(function () {
         autoplay:{
             stopOnLastSlide:true
         }
+    });
+    //演讲嘉宾
+    var mySwiper2 = new Swiper ('.swipe2', {
+        observer:true,//修改swiper自己或子元素时，自动初始化swiper 
+        observeParents:true,//修改swiper的父元素时，自动初始化swiper 
+        loop: true, // 循环模式选项
+        autoplay:{
+            stopOnLastSlide:true
+        }
     })
 })
 
 //嘉宾
 
 
-// var mySwiper2 = new Swiper ('.swipe2', {
-//     pagination:'.swiper2',
-//     loop: true, // 循环模式选项
-//     autoplay:{
-//         stopOnLastSlide:true
-//     }
-// })
