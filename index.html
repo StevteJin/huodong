@@ -17,8 +17,6 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
 	<script src="./js/template-web.js"></script>
 	<link href="https://vjs.zencdn.net/7.2.3/video-js.css" rel="stylesheet">
-	<!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
-  	<script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
 </head>
 
 <body>
@@ -174,32 +172,30 @@
 												<div class="item">
 													<div class="img_area">
 														<div class="swiper-container swiper-container1 swipe2">
-															<div class="swiper-wrapper">
-																<div class="swiper-slide">
-																	<a href="http://tech.qq.com/a/20140328/022365.htm" target="_blank">
-																		<img title="唯品会唐倚智：在三四线城市投入更多配送力量" alt="唯品会唐倚智：在三四线城市投入更多配送力量" src="./img/101163419.jpg">
-																	</a>
-																</div>
-																<div class="swiper-slide">
-																	<a href="http://tech.qq.com/a/20140328/022365.htm" target="_blank">
-																		<img title="唯品会唐倚智：在三四线城市投入更多配送力量" alt="唯品会唐倚智：在三四线城市投入更多配送力量" src="./img/9048852_1200x1000_0.jpg">
-																	</a>
-																</div>
+															<div class="swiper-wrapper" id="guestBox">
+																<script type="text/html" id="guestDataImg">
+																	{{each guestSpeakData as value i}}
+																		<div class="swiper-slide">
+																			<a target="_blank">
+																				<img title="{{value.title}}" alt="{{value.title}}" src="{{value.image}}">
+																			</a>
+																		</div>
+																	{{/each}}
+																</script>
 															</div>
+															
 														</div>
 													</div>
-													<div class="text_area">
-														<h5>
-															<a class="color_black" href="http://tech.qq.com/a/20140328/022365.htm" target="_blank">唯品会唐倚智：在三四线城市投入更多配送力量</a>
-														</h5>三四线城市不发达，但用户依然有可能品牌的需求，依托网络唯品会可以更多的触达这些城市的用户
-														<a class="more" href="http://tech.qq.com/a/20140328/022365.htm" target="_blank">…[详细]</a>
-
-													</div>
-													<div class="text_area">
-														<h5>
-															<a class="color_black" href="http://tech.qq.com/a/20140328/022365.htm" target="_blank">唯品会唐倚智：在三四线城市投入更多配送力量</a>
-														</h5>三四线城市不发达，但用户依然有可能品牌的需求，依托网络唯品会可以更多的触达这些城市的用户
-														<a class="more" href="http://tech.qq.com/a/20140328/022365.htm" target="_blank">…[详细]</a>
+													<div id="gtext">
+														<script type="text/html"  id="guestDataText">
+															{{each guestSpeakData as value i}}
+																<div class="text_area">
+																	<h5>
+																		<a class="color_black" target="_blank">{{value.title}}</a>
+																	</h5>{{value.summary}}
+																</div>
+															{{/each}}
+														</script>
 													</div>
 												</div>
 											</td>

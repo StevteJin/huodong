@@ -47,6 +47,15 @@ $(function () {
                 type:'video/mp4'
                 });
             });
+            //现场嘉宾
+            var guestSpeakData=result.data.cur.guest_speak;
+            data2={
+                guestSpeakData:guestSpeakData
+            };
+            var guestSpeakHtml=template('guestDataImg',data2);
+            document.getElementById('guestBox').innerHTML= guestSpeakHtml;
+            var guestSpeakHtml=template('guestDataText',data2);
+            document.getElementById('gtext').innerHTML= guestSpeakHtml;
         }
     });
     //新闻列表
