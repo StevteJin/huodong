@@ -115,9 +115,13 @@ $(function () {
         autoplay:{
             stopOnLastSlide:true
         }
+    });
+    //进入详情
+    $("#newsContent").on("click",".newsbox",function(){
+        console.log($(this).attr("data-id"));
+        var id=$(this).attr("data-id");
+        window.location.href="/news.html?id="+id;
     })
 })
-
-//嘉宾
 
 
