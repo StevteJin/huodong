@@ -15,13 +15,24 @@
 	<link rel="stylesheet" type="text/css" href="./css/hdPic_ifr_v0.0.5.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
-	<script src="http://vjs.zencdn.net/ie8/1.1.0/videojs-ie8.min.js"></script>
-    <script src="http://vjs.zencdn.net/5.0.2/video.js"></script>
+	<script src="./js/template-web.js"></script>
+	<link href="https://vjs.zencdn.net/7.2.3/video-js.css" rel="stylesheet">
+	<!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+  	<script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
 </head>
 
 <body>
 	<!--顶部大图 s-->
-	<div id="newstop1" class="banner_zt" style="background:url(./img/banner.jpg) no-repeat center center;height:299px;width:100%;"></div>
+	<!-- <script id="test" type="text/html">
+		<ul>
+			{{each contenty as value i}}
+			<li><div class="leftTitle" data-id="{{value.articleId}}">{{value.title}}</div><div class="rightEdit"><span class="editor">编辑</span><span class="delete">删除</span></div></li>
+			{{/each}}
+		</ul>
+	  </script> -->
+	<div id="newstop1" class="banner_zt" style="height:299px;width:100%;">
+		<img src="" alt="" style="width:100%;height:299px;">
+	</div>
 	<!--顶部大图 e-->
 	<!--导航 s-->
 	<div class="nav_zt" style="width:100%;">
@@ -54,47 +65,21 @@
 			<div class="col_1">
 				<div class="mod_zt_6" id="ztu_3">
 					<div class="bd">
-						<div class="inner">
-							<div class="zt_c_1" id="ztc_7">
-								<h2 name="goAccessAnchor0">
-									<a href="http://tech.qq.com/a/20140328/011105.htm" target="_blank">2014中国电子商务发展论坛开幕</a>
-								</h2>
-							</div>
-							<div class="zt_c_1" id="ztc_8">
-								<div class="text_area">以“重装上阵·新未来”为主题的2014中国（深圳）电子商务发展论坛3月28日在深圳市五洲宾馆开幕
-									<a class="more" href="http://tech.qq.com/a/20140328/011105.htm" target="_blank">…[详细]</a>
+						<div class="inner" id="newsContent">
+							<script id="news"  type="text/html">
+								{{each newsContent as value i}}
+								<div class="newsbox">
+									<div class="zt_c_1">
+										<h2 name="goAccessAnchor0">
+											<a target="_blank">{{value.title}}</a>
+										</h2>
+									</div>
+									<div class="zt_c_1">
+										<div class="text_area text_description">{{value.description}}</div>
+									</div>
 								</div>
-							</div>
-							<div class="zt_c_1" id="ztc_75">
-								<h2 name="goAccessAnchor1">
-									<a href="http://tech.qq.com/a/20140328/010001.htm" target="_blank">陈彪：深圳电商发展达到发达国家水平</a>
-								</h2>
-							</div>
-							<div class="zt_c_1" id="ztc_76">
-								<div class="text_area">深圳网购人数破500万，消费占消费零售总额的20%
-									<a class="more" href="http://tech.qq.com/a/20140328/010001.htm" target="_blank">…[详细]</a>
-								</div>
-							</div>
-							<div class="zt_c_1" id="ztc_95">
-								<h2 name="goAccessAnchor2">
-									<a class="dujia" href="http://tech.qq.com/a/20140328/022365.htm" target="_blank">专访唐倚智：重视三四线城市发展</a>
-								</h2>
-							</div>
-							<div class="zt_c_1" id="ztc_96">
-								<div class="text_area">三四线城市不发达，但用户依然有可能品牌的需求，依托网络唯品会可以更多的触达这些城市的用户
-									<a class="more" href="http://tech.qq.com/a/20140328/022365.htm" target="_blank">…[详细]</a>
-								</div>
-							</div>
-							<div class="zt_c_1" id="ztc_97">
-								<h2 name="goAccessAnchor3">
-									<a href="http://tech.qq.com/a/20140328/013845.htm" target="_blank">周涛谈电商：数据流动才能带来价值</a>
-								</h2>
-							</div>
-							<div class="zt_c_1" id="ztc_98">
-								<div class="text_area">不同的电商平台都有自己的数据，需要把这些数据资源整合起来，实现流动，以创造最大价值
-									<a class="more" href="http://tech.qq.com/a/20140328/013845.htm" target="_blank">…[详细]</a>
-								</div>
-							</div>
+								{{/each}}
+							</script>
 						</div>
 					</div>
 				</div>
@@ -112,50 +97,29 @@
 													<tbody>
 														<tr>
 															<td>
-																<div style="border:1px solid #D6D6D6; width:566px; height:280px;margin-left:auto; margin-right:auto;" id="fcbb_ztc_74">
-																	<div style="display: block;">
-																		<a target="_blank" href="http://tech.qq.com/a/20140328/011105.htm">
-																			<img height="280" border="0" width="566" src="./img/101104001.jpg" onmouseout="setAutobb_ztc_74()" onmouseover="clearAutobb_ztc_74();">
-																		</a>
-																	</div>
-																	<div style="display: none;">
-																		<a target="_blank" href="http://tech.qq.com/a/20140328/010434.htm">
-																			<img height="280" border="0" width="566" src="./img/101104008.jpg" onmouseout="setAutobb_ztc_74()" onmouseover="clearAutobb_ztc_74();">
-																		</a>
+																<div style="border:1px solid #D6D6D6; width:566px; height:330px;margin-left:auto; margin-right:auto;">
+																	<div class="swiper-container swipe1">
+																		<div class="swiper-wrapper" id="lunbo">
+																			<script id="lunImg" type="text/html">
+																				{{each focusData as value i}}
+																					<div class="swiper-slide">
+																						<a target="_blank">
+																							<img height="280" border="0" width="566" title="{{value.title}}" alt="{{value.title}}" src="{{value.image}}">
+																						</a>
+																						<div>{{value.title}}</div>
+																						<div class="bb">
+																							<div class="class="text_area"">
+																								<span class="font_w_b">日期：</span>{{value.actiontime}}
+																								<span class="font_w_b">地点：</span>{{value.address}}
+																								<span class="font_w_b">主办单位：</span>{{value.host}}
+																							</div>
+																						</div>
+																					</div>
+																				{{/each}}
+																			</script>
+																		</div>
 																	</div>
 																</div>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<table cellspacing="0" cellpadding="0" border="0" align="center" width="568">
-																	<tbody>
-																		<tr>
-																			<td align="middle" width="496" onmouseout="setAutobb_ztc_74()" onmouseover="clearAutobb_ztc_74();">
-																				<div id="conbb_ztc_74">
-																					<div style="display: block;">
-																						<a target="_blank" href="http://tech.qq.com/a/20140328/011105.htm" class="bla">2014中国电商发展论坛开幕</a>
-																					</div>
-																					<div style="display: none;">
-																						<a target="_blank" href="http://tech.qq.com/a/20140328/010434.htm" class="bla">组图：2014中国深圳电商发展论坛现场</a>
-																					</div>
-																				</div>
-																			</td>
-																			<td width="72">
-																				<table cellspacing="3" cellpadding="0" border="0" align="right" id="numbb_ztc_74">
-																					<tbody>
-																						<tr>
-																							<td height="18" align="center" width="15" onmouseout="setAutobb_ztc_74()" onmouseover="clearAutobb_ztc_74();" onclick="Meabb_ztc_74(0);"
-																							 style="cursor: pointer;" class="bigon">1</td>
-																							<td align="center" width="15" onmouseout="setAutobb_ztc_74()" onmouseover="clearAutobb_ztc_74();" onclick="Meabb_ztc_74(1);"
-																							 style="cursor: pointer;" class="bigoff">2</td>
-																						</tr>
-																					</tbody>
-																				</table>
-																			</td>
-																		</tr>
-																	</tbody>
-																</table>
 															</td>
 														</tr>
 													</tbody>
@@ -165,26 +129,14 @@
 									</tbody>
 								</table>
 							</div>
-							<div class="zt_c_19" id="ztc_87">
-								<div class="bb">
-									<div class="text_area">
-										<span class="font_w_b">日期</span>
-										：3月28日
-										<span class="font_w_b">地点：</span>
-										深圳五洲宾馆华夏厅
-										<span class="font_w_b">主办单位：</span>
-										深圳市人民政府
-									</div>
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<!--新闻 e-->
-		<!--嘉宾演讲 s-->
-		<div id="newstop2" class="layout_r1">
+		<!--精彩视频 s-->
+		<div class="layout_r1">
 			<div class="col_1">
 				<div class="mod_zt_1" id="ztu_12">
 					<div class="hd">
@@ -194,16 +146,12 @@
 					</div>
 				</div>
 				<div style="width:100%;">
-				<video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="960" height="264" poster="http://vjs.zencdn.net/v/oceans.png" data-setup="{}">
-					<source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
-					<source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm">
-					<source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg">
-					<track kind="captions" src="../shared/example-captions.vtt" srclang="en" label="English"></track>
-					<!-- Tracks need an ending tag thanks to IE9 -->
-					<track kind="subtitles" src="../shared/example-captions.vtt" srclang="en" label="English"></track>
-					<!-- Tracks need an ending tag thanks to IE9 -->
-					<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-				  </video>
+					<!-- <video id="my-video" class="video-js" controls preload="auto" width="960" height="264" data-setup="{}">
+						<source src="MY_VIDEO.mp4" type='video/mp4'>
+						<source src="MY_VIDEO.webm" type='video/webm'>
+					</video> -->
+					<video id="container" class="video-js vjs-big-play-centered"  width="960" height="264" controls preload="auto"></video>
+					<script src="https://vjs.zencdn.net/7.2.3/video.js"></script>
 				</div>
 			</div>
 		</div>
@@ -225,7 +173,7 @@
 											<td>
 												<div class="item">
 													<div class="img_area">
-														<div class="swiper-container">
+														<div class="swiper-container swiper-container1 swipe2">
 															<div class="swiper-wrapper">
 																<div class="swiper-slide">
 																	<a href="http://tech.qq.com/a/20140328/022365.htm" target="_blank">

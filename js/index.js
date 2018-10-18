@@ -18,81 +18,65 @@ $(function () {
     $("#goright").on("click",function(){
         $("#Smailllist").css("left","-622px");
     });
+    //请求主页数据
+    $.ajax({
+        type : "GET",
+        url : "http://show.smartqmx.com/api/bbs",
+        success : function (result) {
+            /*顶部大图*/
+            var topImgUrl=result.data.cur.image;
+            $("#newstop1").find("img").attr("src",topImgUrl);
+            //右侧轮播图
+            var focusData=result.data.cur.focus;
+            data1={
+                focusData:focusData
+            };
+            var focusHtml=template('lunImg',data1);
+            document.getElementById('lunbo').innerHTML=focusHtml;
+            //视频
+            var videoUrl=result.data.cur.video;
+            //初始化视频
+            let player = videojs('container',{
+                //像data-setup那样设置的参数
+            },function onPlayerReady(){
+                //视频播放器初始化完毕，就会调用这个回调函数
+                this.src({
+                src: videoUrl,
+                type:'video/mp4'
+                });
+            });
+        }
+    });
+    //新闻列表
+    $.ajax({
+        type : "GET",
+        url : "http://show.smartqmx.com/api/News/newsList",
+        success : function (result) {
+           var newsContent=result.data;
+           var data = {
+                newsContent: newsContent
+            };
+           var html=template('news',data);
+           document.getElementById('newsContent').innerHTML = html;
+        }
+    });
+    var mySwiper1 = new Swiper ('.swipe1', {
+        observer:true,//修改swiper自己或子元素时，自动初始化swiper 
+        observeParents:true,//修改swiper的父元素时，自动初始化swiper 
+        loop: true, // 循环模式选项
+        autoplay:{
+            stopOnLastSlide:true
+        }
+    })
 })
-//右侧轮播 s
-var nbb_ztc_74 = 0;
-var pic_count_ztc_74 = 2;
-var showNumbb_ztc_74 = document.getElementById("numbb_ztc_74");
-function Meabb_ztc_74(value) {
-    nbb_ztc_74 = value;
-    setBgbb_ztc_74(value);
-    playsbb_ztc_74(value);
-    consbb_ztc_74(value);
-}
-function setBgbb_ztc_74(value) {
-    for (var i = 0; i < pic_count_ztc_74; i++)
-        if (value == i) {
-            showNumbb_ztc_74.getElementsByTagName("td")[i].className = 'bigon';
-        }
-        else {
-            showNumbb_ztc_74.getElementsByTagName("td")[i].className = 'bigoff';
-        }
-}
-function playsbb_ztc_74(value) {
-    try {
-        with (fcbb_ztc_74) {
-            filters[0].Apply();
-            for (i = 0; i < pic_count_ztc_74; i++)i == value ? children[i].style.display = "block" : children[i].style.display = "none";
-            filters[0].play();
-        }
-    }
-    catch (e) {
-        var divlist = document.getElementById("fcbb_ztc_74").getElementsByTagName("div");
-        for (i = 0; i < pic_count_ztc_74; i++) {
-            i == value ? divlist[i].style.display = "block" : divlist[i].style.display = "none";
-        }
-    }
-
-
-}
-function consbb_ztc_74(value) {
-    try {
-        with (conbb_ztc_74) {
-            for (i = 0; i < pic_count_ztc_74; i++)i == value ? children[i].style.display = "block" : children[i].style.display = "none";
-        }
-    }
-    catch (e) {
-        var divlist = document.getElementById("conbb_ztc_74").getElementsByTagName("div");
-        for (i = 0; i < pic_count_ztc_74; i++) {
-            i == value ? divlist[i].style.display = "block" : divlist[i].style.display = "none";
-        }
-    }
-}
-
-function clearAutobb_ztc_74() { clearInterval(autoStartbb_ztc_74) }
-function setAutobb_ztc_74() { autoStartbb_ztc_74 = setInterval("autobb_ztc_74(nbb_ztc_74)", 3000) }
-function autobb_ztc_74() {
-    try {
-        nbb_ztc_74++;
-        if (nbb_ztc_74 > pic_count_ztc_74 - 1) nbb_ztc_74 = 0;
-        Meabb_ztc_74(nbb_ztc_74);
-    } catch (e) { }
-}
-function subbb_ztc_74() {
-    nbb_ztc_74--;
-    if (nbb_ztc_74 < 0) n = pic_count_ztc_74 - 1;
-
-    Meabb_ztc_74(nbb_ztc_74);
-}
-setAutobb_ztc_74();
-
-//右侧轮播 e
-
 
 //嘉宾
-var mySwiper = new Swiper ('.swiper-container', {
-    loop: true, // 循环模式选项
-    autoplay:{
-        stopOnLastSlide:true
-    }
-})
+
+
+// var mySwiper2 = new Swiper ('.swipe2', {
+//     pagination:'.swiper2',
+//     loop: true, // 循环模式选项
+//     autoplay:{
+//         stopOnLastSlide:true
+//     }
+// })
