@@ -175,7 +175,7 @@
 															<div class="swiper-wrapper" id="guestBox">
 																<script type="text/html" id="guestDataImg">
 																	{{each guestSpeakData as value i}}
-																		<div class="swiper-slide">
+																		<div class="swiper-slide" style="cursor:pointer;" data-id="{{value.id}}">
 																			<a target="_blank">
 																				<img title="{{value.title}}" alt="{{value.title}}" src="{{value.image}}">
 																			</a>
@@ -189,7 +189,7 @@
 													<div id="gtext">
 														<script type="text/html"  id="guestDataText">
 															{{each guestSpeakData as value i}}
-																<div class="text_area">
+																<div class="text_area" style="cursor:pointer;" data-id="{{value.id}}">
 																	<h5>
 																		<a class="color_black" target="_blank">{{value.title}}</a>
 																	</h5>{{value.summary}}

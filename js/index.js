@@ -69,7 +69,7 @@ $(function () {
         }
     });
      //高清大图show
-     $("#Smailllist li").eq(0).css("display","block");
+     $("#Smailllist").find("li").eq(0).css("display","block");
      $("#Smailllist").on("click","li",function(){
         $(this).children(".mask").css("display","block");
         $(this).siblings().children(".mask").css("display","none");
@@ -120,7 +120,17 @@ $(function () {
     $("#newsContent").on("click",".newsbox",function(){
         console.log($(this).attr("data-id"));
         var id=$(this).attr("data-id");
-        window.location.href="/news.html?id="+id;
+        window.open("/news.html?id="+id);
+    });
+    $("#guestBox").on("click",".swiper-slide",function(){
+        console.log($(this).attr("data-id"));
+        var id=$(this).attr("data-id");
+        window.open("/news1.html?id="+id);
+    });
+    $("#guestDataText").on("click",".text_area",function(){
+        console.log($(this).attr("data-id"));
+        var id=$(this).attr("data-id");
+        window.open("/news1.html?id="+id);
     })
 })
 
