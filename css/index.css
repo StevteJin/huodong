@@ -334,6 +334,7 @@ li.end {
 #newstop6 .box .left {
     float: left;
     width: 580px;
+    height:144px;
     overflow: hidden;
     border: 1px solid #e1e1e1;
     box-sizing: border-box;

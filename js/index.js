@@ -2,22 +2,6 @@ $(function () {
     $("#topnav li").on("click", function () {
         $(this).addClass("start").siblings().removeClass("start");
     });
-    //高清大图show
-    $("#Smailllist li").on("click",function(){
-        $(this).children(".mask").css("display","block");
-        $(this).siblings().children(".mask").css("display","none");
-        var path=$(this).find("img").attr('rel');
-        $("#bigPic").attr('src',path);
-        var _index=$(this).index()+1;
-        $("#curNum").html(_index);
-        //$("#infoTxt").html() 
-    });
-    $("#goleft").on("click",function(){
-        $("#Smailllist").css("left","0px");
-    })
-    $("#goright").on("click",function(){
-        $("#Smailllist").css("left","-622px");
-    });
     //请求主页数据
     $.ajax({
         type : "GET",
@@ -56,7 +40,47 @@ $(function () {
             document.getElementById('guestBox').innerHTML= guestSpeakHtml;
             var guestSpeakHtml=template('guestDataText',data2);
             document.getElementById('gtext').innerHTML= guestSpeakHtml;
+            //现场高清大图
+            var nowBigImg=result.data.cur.images;
+            data3={
+                nowBigImg:nowBigImg
+            };
+            var nowBigImgHtml=template('nowBigImg',data3);
+            document.getElementById('Smailllist').innerHTML= nowBigImgHtml;
+            //与会嘉宾
+            var jiaBi=result.data.cur.guest;
+            data4={
+                jiaBi:jiaBi
+            };
+            var jbHtml=template('jiaBi',data4);
+            document.getElementById('yhjb').innerHTML= jbHtml;
+            //论坛议程
+            var charu=result.data.cur.program;
+            $("#charu").append(charu);
+            //启明星最新活动
+            var zuixin=result.data.history;
+            data5={
+                zuixin:zuixin
+            };
+            var zxHtml=template('zuixin',data5);
+            document.getElementById('zuixinbox').innerHTML= zxHtml;
         }
+    });
+     //高清大图show
+     $("#Smailllist li").on("click",function(){
+        $(this).children(".mask").css("display","block");
+        $(this).siblings().children(".mask").css("display","none");
+        var path=$(this).find("img").attr('rel');
+        $("#bigPic").attr('src',path);
+        var _index=$(this).index()+1;
+        $("#curNum").html(_index);
+        //$("#infoTxt").html() 
+    });
+    $("#goleft").on("click",function(){
+        $("#Smailllist").css("left","0px");
+    })
+    $("#goright").on("click",function(){
+        $("#Smailllist").css("left","-622px");
     });
     //新闻列表
     $.ajax({
