@@ -42,6 +42,8 @@ $(function () {
             document.getElementById('gtext').innerHTML= guestSpeakHtml;
             //现场高清大图
             var nowBigImg=result.data.cur.images;
+            $("#infoTxt p").html(nowBigImg[0].title);
+            $("#tatolNum").html('/'+nowBigImg.length);
             data3={
                 nowBigImg:nowBigImg
             };
@@ -67,14 +69,16 @@ $(function () {
         }
     });
      //高清大图show
-     $("#Smailllist li").on("click",function(){
+     $("#Smailllist li").eq(0).css("display","block");
+     $("#Smailllist").on("click","li",function(){
         $(this).children(".mask").css("display","block");
         $(this).siblings().children(".mask").css("display","none");
         var path=$(this).find("img").attr('rel');
         $("#bigPic").attr('src',path);
         var _index=$(this).index()+1;
         $("#curNum").html(_index);
-        //$("#infoTxt").html() 
+        var title=$(this).find("img").attr('title');
+        $("#infoTxt p").html(title);
     });
     $("#goleft").on("click",function(){
         $("#Smailllist").css("left","0px");
