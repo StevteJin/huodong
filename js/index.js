@@ -120,17 +120,17 @@ $(function () {
     $("#newsContent").on("click",".newsbox",function(){
         console.log($(this).attr("data-id"));
         var id=$(this).attr("data-id");
-        window.open("/news.html?id="+id);
+        window.open("/home/news.html?id="+id);
     });
     $("#guestBox").on("click",".swiper-slide",function(){
         console.log($(this).attr("data-id"));
         var id=$(this).attr("data-id");
-        window.open("/news1.html?id="+id);
+        window.open("/home/news1.html?id="+id);
     });
     $("#guestDataText").on("click",".text_area",function(){
         console.log($(this).attr("data-id"));
         var id=$(this).attr("data-id");
-        window.open("/news1.html?id="+id);
+        window.open("/home/news1.html?id="+id);
     })
 })
 
