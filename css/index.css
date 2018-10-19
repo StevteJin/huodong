@@ -343,8 +343,9 @@ li.end {
 
 #newstop6 .box .left ul li {
     float: left;
-    width: 50%;
-    text-align: center;
+    width: 44%;
+    text-align: left;
+    margin-left: 4%;
 }
 
 #newstop6 .box .right {
