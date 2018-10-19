@@ -188,7 +188,7 @@ $(function () {
     //底部新闻
     $.ajax({
         type : "GET",
-        url : "http://kuanke.smartqmx.com/api/News/article_url",
+        url : "/api/News/article_url",
         success : function (result) {
            var dContent=result.data;
            var data = {
