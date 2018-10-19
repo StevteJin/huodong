@@ -28,7 +28,9 @@ $(function () {
                 //视频播放器初始化完毕，就会调用这个回调函数
                 this.src({
                 src: videoUrl,
-                type:'video/mp4'
+                // type:'video/mp4'
+                //src:'https://23992.liveplay.myqcloud.com/live/23992_2992_live.m3u8',
+                type:'application/x-mpegURL'
                 });
             });
             //现场嘉宾
@@ -102,19 +104,15 @@ $(function () {
     var mySwiper1 = new Swiper ('.swipe1', {
         observer:true,//修改swiper自己或子元素时，自动初始化swiper 
         observeParents:true,//修改swiper的父元素时，自动初始化swiper 
-        loop: true, // 循环模式选项
-        autoplay:{
-            stopOnLastSlide:true
-        }
+        // loop: true, // 循环模式选项
+        autoplay:true
     });
     //演讲嘉宾
     var mySwiper2 = new Swiper ('.swipe2', {
         observer:true,//修改swiper自己或子元素时，自动初始化swiper 
         observeParents:true,//修改swiper的父元素时，自动初始化swiper 
-        loop: true, // 循环模式选项
-        autoplay:{
-            stopOnLastSlide:true
-        }
+        // loop: true, // 循环模式选项
+        autoplay:true
     });
     //进入详情
     $("#newsContent").on("click",".newsbox",function(){
