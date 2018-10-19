@@ -2,10 +2,6 @@ $(function () {
     $("#topnav li").on("click", function () {
         $(this).addClass("start").siblings().removeClass("start");
     });
-    $("#zuixinbox").on("click","li",function(){
-        var id=$(this).attr("data-id");
-        window.open('/home/index1.html?id='+id);
-    })
     function getMsg(){
         function getUrlParam(name) {
             var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
@@ -187,6 +183,19 @@ $(function () {
             };
            var html=template('news',data);
            document.getElementById('newsContent').innerHTML = html;
+        }
+    });
+    //底部新闻
+    $.ajax({
+        type : "GET",
+        url : "http://kuanke.smartqmx.com/api/News/article_url",
+        success : function (result) {
+           var dContent=result.data;
+           var data = {
+                dContent: dContent
+            };
+           var dhtml=template('zuixin',data);
+           document.getElementById('zuixinbox').innerHTML = dhtml;
         }
     });
     var mySwiper1 = new Swiper ('.swipe1', {

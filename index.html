@@ -373,8 +373,8 @@
 					<div class="left">
 						<ul id="zuixinbox">
 							<script type="text/html" id="zuixin">
-								{{each zuixin as value i}}
-									<li data-id="{{value.id}}">{{value.category.name}}•{{value.title}}</li>
+								{{each dContent as value i}}
+									<li data-id="{{value.id}}"><a href="{{value.url}}" target="_blank">{{value.title}}</a></li>
 								{{/each}}
 							</script>
 						</ul>

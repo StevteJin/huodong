@@ -18,8 +18,8 @@ a:hover,a:active{text-decoration:underline;}
 
 /* 字体颜色 */
 body{ color:#333;}
+a{color:#333;}
 a:link{color:#333;}
-a:visited{color:#800080;}
 a:hover{color:#cc0000;}
 .pub_time{color:#9C9C9C;}
 .color_red,a:link.color_red,a.color_red:hover,a.color_red:active,a.color_red:visited{color:#BC2D09;}
