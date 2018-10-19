@@ -2,74 +2,162 @@ $(function () {
     $("#topnav li").on("click", function () {
         $(this).addClass("start").siblings().removeClass("start");
     });
-    //请求主页数据
-    $.ajax({
-        type : "GET",
-        url : "http://show.smartqmx.com/api/bbs",
-        success : function (result) {
-            /*顶部大图*/
-            var topImgUrl=result.data.cur.image;
-            $("#newstop1").find("img").attr("src",topImgUrl);
-            //右侧轮播图
-            var focusData=result.data.cur.focus;
-            data1={
-                focusData:focusData
-            };
-            var focusHtml=template('lunImg',data1);
-            document.getElementById('lunbo').innerHTML=focusHtml;
-            //视频
-            var videoUrl=result.data.cur.video;
-            var videoImg=result.data.cur.thumb;
-            $("#container").attr("poster",videoImg);
-            //初始化视频
-            let player = videojs('container',{
-                //像data-setup那样设置的参数
-            },function onPlayerReady(){
-                //视频播放器初始化完毕，就会调用这个回调函数
-                this.src({
-                src: videoUrl,
-                // type:'video/mp4'
-                //src:'https://23992.liveplay.myqcloud.com/live/23992_2992_live.m3u8',
-                type:'application/x-mpegURL'
-                });
+    $("#zuixinbox").on("click","li",function(){
+        var id=$(this).attr("data-id");
+        window.open('/home/index1.html?id='+id);
+    })
+    function getMsg(){
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+            var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+            if (r != null) return unescape(r[2]); return null; //返回参数值
+        };
+        var id=getUrlParam('id');
+        if(id){
+            //请求主页数据
+            $.ajax({
+                type : "GET",
+                url : "/api/bbs/"+id,
+                success : function (result) {
+                    /*顶部大图*/
+                    var topImgUrl=result.data.cur.image;
+                    $("#newstop1").find("img").attr("src",topImgUrl);
+                    //右侧轮播图
+                    var focusData=result.data.cur.focus;
+                    data1={
+                        focusData:focusData
+                    };
+                    var focusHtml=template('lunImg',data1);
+                    document.getElementById('lunbo').innerHTML=focusHtml;
+                    //视频
+                    var videoUrl=result.data.cur.video;
+                    var videoImg=result.data.cur.thumb;
+                    $("#container").attr("poster",videoImg);
+                    //初始化视频
+                    let player = videojs('container',{
+                        //像data-setup那样设置的参数
+                    },function onPlayerReady(){
+                        //视频播放器初始化完毕，就会调用这个回调函数
+                        this.src({
+                        src: videoUrl,
+                        // type:'video/mp4'
+                        //src:'https://23992.liveplay.myqcloud.com/live/23992_2992_live.m3u8',
+                        type:'application/x-mpegURL'
+                        });
+                        this.play();
+                    });
+                    //现场嘉宾
+                    var guestSpeakData=result.data.cur.guest_speak;
+                    data2={
+                        guestSpeakData:guestSpeakData
+                    };
+                    var guestSpeakHtml=template('guestDataImg',data2);
+                    document.getElementById('guestBox').innerHTML= guestSpeakHtml;
+                    var guestSpeakHtml=template('guestDataText',data2);
+                    document.getElementById('gtext').innerHTML= guestSpeakHtml;
+                    //现场高清大图
+                    var nowBigImg=result.data.cur.images;
+                    $("#bigPic").attr("src",nowBigImg[0].img);
+                    $("#infoTxt p").html(nowBigImg[0].title);
+                    $("#tatolNum").html('/'+nowBigImg.length);
+                    data3={
+                        nowBigImg:nowBigImg
+                    };
+                    var nowBigImgHtml=template('nowBigImg',data3);
+                    document.getElementById('Smailllist').innerHTML= nowBigImgHtml;
+                    //与会嘉宾
+                    var jiaBi=result.data.cur.guest;
+                    data4={
+                        jiaBi:jiaBi
+                    };
+                    var jbHtml=template('jiaBi',data4);
+                    document.getElementById('yhjb').innerHTML= jbHtml;
+                    //论坛议程
+                    var charu=result.data.cur.program;
+                    $("#charu").append(charu);
+                    //启明星最新活动
+                    var zuixin=result.data.history;
+                    data5={
+                        zuixin:zuixin
+                    };
+                    var zxHtml=template('zuixin',data5);
+                    document.getElementById('zuixinbox').innerHTML= zxHtml;
+                }
             });
-            //现场嘉宾
-            var guestSpeakData=result.data.cur.guest_speak;
-            data2={
-                guestSpeakData:guestSpeakData
-            };
-            var guestSpeakHtml=template('guestDataImg',data2);
-            document.getElementById('guestBox').innerHTML= guestSpeakHtml;
-            var guestSpeakHtml=template('guestDataText',data2);
-            document.getElementById('gtext').innerHTML= guestSpeakHtml;
-            //现场高清大图
-            var nowBigImg=result.data.cur.images;
-            $("#infoTxt p").html(nowBigImg[0].title);
-            $("#tatolNum").html('/'+nowBigImg.length);
-            data3={
-                nowBigImg:nowBigImg
-            };
-            var nowBigImgHtml=template('nowBigImg',data3);
-            document.getElementById('Smailllist').innerHTML= nowBigImgHtml;
-            //与会嘉宾
-            var jiaBi=result.data.cur.guest;
-            data4={
-                jiaBi:jiaBi
-            };
-            var jbHtml=template('jiaBi',data4);
-            document.getElementById('yhjb').innerHTML= jbHtml;
-            //论坛议程
-            var charu=result.data.cur.program;
-            $("#charu").append(charu);
-            //启明星最新活动
-            var zuixin=result.data.history;
-            data5={
-                zuixin:zuixin
-            };
-            var zxHtml=template('zuixin',data5);
-            document.getElementById('zuixinbox').innerHTML= zxHtml;
+        }else{
+            //请求主页数据
+            $.ajax({
+                type : "GET",
+                url : "/api/bbs",
+                success : function (result) {
+                    /*顶部大图*/
+                    var topImgUrl=result.data.cur.image;
+                    $("#newstop1").find("img").attr("src",topImgUrl);
+                    //右侧轮播图
+                    var focusData=result.data.cur.focus;
+                    data1={
+                        focusData:focusData
+                    };
+                    var focusHtml=template('lunImg',data1);
+                    document.getElementById('lunbo').innerHTML=focusHtml;
+                    //视频
+                    var videoUrl=result.data.cur.video;
+                    var videoImg=result.data.cur.thumb;
+                    $("#container").attr("poster",videoImg);
+                    //初始化视频
+                    let player = videojs('container',{
+                        //像data-setup那样设置的参数
+                    },function onPlayerReady(){
+                        //视频播放器初始化完毕，就会调用这个回调函数
+                        this.src({
+                        src: videoUrl,
+                        // type:'video/mp4'
+                        //src:'https://23992.liveplay.myqcloud.com/live/23992_2992_live.m3u8',
+                        type:'application/x-mpegURL'
+                        });
+                        this.play();
+                    });
+                    //现场嘉宾
+                    var guestSpeakData=result.data.cur.guest_speak;
+                    data2={
+                        guestSpeakData:guestSpeakData
+                    };
+                    var guestSpeakHtml=template('guestDataImg',data2);
+                    document.getElementById('guestBox').innerHTML= guestSpeakHtml;
+                    var guestSpeakHtml=template('guestDataText',data2);
+                    document.getElementById('gtext').innerHTML= guestSpeakHtml;
+                    //现场高清大图
+                    var nowBigImg=result.data.cur.images;
+                    $("#bigPic").attr("src",nowBigImg[0].img);
+                    $("#infoTxt p").html(nowBigImg[0].title);
+                    $("#tatolNum").html('/'+nowBigImg.length);
+                    data3={
+                        nowBigImg:nowBigImg
+                    };
+                    var nowBigImgHtml=template('nowBigImg',data3);
+                    document.getElementById('Smailllist').innerHTML= nowBigImgHtml;
+                    //与会嘉宾
+                    var jiaBi=result.data.cur.guest;
+                    data4={
+                        jiaBi:jiaBi
+                    };
+                    var jbHtml=template('jiaBi',data4);
+                    document.getElementById('yhjb').innerHTML= jbHtml;
+                    //论坛议程
+                    var charu=result.data.cur.program;
+                    $("#charu").append(charu);
+                    //启明星最新活动
+                    var zuixin=result.data.history;
+                    data5={
+                        zuixin:zuixin
+                    };
+                    var zxHtml=template('zuixin',data5);
+                    document.getElementById('zuixinbox').innerHTML= zxHtml;
+                }
+            });
         }
-    });
+    }
+    getMsg();
      //高清大图show
      $("#Smailllist").find("li").eq(0).css("display","block");
      $("#Smailllist").on("click","li",function(){
@@ -91,7 +179,7 @@ $(function () {
     //新闻列表
     $.ajax({
         type : "GET",
-        url : "http://show.smartqmx.com/api/News/newsList",
+        url : "/api/News/newsList",
         success : function (result) {
            var newsContent=result.data;
            var data = {
@@ -125,7 +213,7 @@ $(function () {
         var id=$(this).attr("data-id");
         window.open("/home/news1.html?id="+id);
     });
-    $("#guestDataText").on("click",".text_area",function(){
+    $("#gtext").on("click",".text_area",function(){
         console.log($(this).attr("data-id"));
         var id=$(this).attr("data-id");
         window.open("/home/news1.html?id="+id);

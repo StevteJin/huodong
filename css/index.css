@@ -488,3 +488,5 @@ li.end {
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+
+#zuixinbox li{cursor: pointer;}

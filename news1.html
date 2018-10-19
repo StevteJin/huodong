@@ -148,7 +148,7 @@
             var id=getUrlParam('id');
             $.ajax({
                 type : "POST",
-                url : "http://show.smartqmx.com/api/bbs/speak/"+id,
+                url : "/api/bbs/speak/"+id,
                 success : function (result) {
                     var title=result.msg.title;
                     console.log(title)
