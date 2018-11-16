@@ -2235,7 +2235,7 @@
    * A Custom DOM event.
    *
    * @typedef {Object} EventTarget~Event
-   * @see [Properties]{@link https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent}
+   * @see [Properties]{@link https://developer.mozilla.org/en-US/docs/Webhttp://kuanke.smartqmx.com/api/CustomEvent}
    */
 
   /**
@@ -3877,7 +3877,7 @@
      *         - Most browsers will return null if the attibute does not exist or has
      *           no value.
      *
-     * @see [DOM API]{@link https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute}
+     * @see [DOM API]{@link https://developer.mozilla.org/en-US/docs/Webhttp://kuanke.smartqmx.com/api/Element/getAttribute}
      */
 
 
@@ -3894,7 +3894,7 @@
      * @param {string} value
      *        Value to set the attribute to.
      *
-     * @see [DOM API]{@link https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute}
+     * @see [DOM API]{@link https://developer.mozilla.org/en-US/docs/Webhttp://kuanke.smartqmx.com/api/Element/setAttribute}
      */
 
 
@@ -3908,7 +3908,7 @@
      * @param {string} attribute
      *        Name of the attribute to remove.
      *
-     * @see [DOM API]{@link https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute}
+     * @see [DOM API]{@link https://developer.mozilla.org/en-US/docs/Webhttp://kuanke.smartqmx.com/api/Element/removeAttribute}
      */
 
 
@@ -4352,7 +4352,7 @@
      *         was set.
      *
      * @listens Component#dispose
-     * @see [Similar to]{@link https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setTimeout}
+     * @see [Similar to]{@link https://developer.mozilla.org/en-US/docs/Webhttp://kuanke.smartqmx.com/api/WindowTimers/setTimeout}
      */
 
 
@@ -4394,7 +4394,7 @@
      * @return {number}
      *         Returns the timeout id that was cleared.
      *
-     * @see [Similar to]{@link https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/clearTimeout}
+     * @see [Similar to]{@link https://developer.mozilla.org/en-US/docs/Webhttp://kuanke.smartqmx.com/api/WindowTimers/clearTimeout}
      */
 
 
@@ -4428,7 +4428,7 @@
      *         {@link Component#clearInterval} to clear the interval.
      *
      * @listens Component#dispose
-     * @see [Similar to]{@link https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval}
+     * @see [Similar to]{@link https://developer.mozilla.org/en-US/docs/Webhttp://kuanke.smartqmx.com/api/WindowTimers/setInterval}
      */
 
 
@@ -4463,7 +4463,7 @@
      * @return {number}
      *         Returns the interval id that was cleared.
      *
-     * @see [Similar to]{@link https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/clearInterval}
+     * @see [Similar to]{@link https://developer.mozilla.org/en-US/docs/Webhttp://kuanke.smartqmx.com/api/WindowTimers/clearInterval}
      */
 
 
@@ -4502,7 +4502,7 @@
      *         the animation frame callback.
      *
      * @listens Component#dispose
-     * @see [Similar to]{@link https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame}
+     * @see [Similar to]{@link https://developer.mozilla.org/en-US/docs/Webhttp://kuanke.smartqmx.com/api/window/requestAnimationFrame}
      */
 
 
@@ -4549,7 +4549,7 @@
      * @return {number}
      *         Returns the rAF ID that was cleared.
      *
-     * @see [Similar to]{@link https://developer.mozilla.org/en-US/docs/Web/API/window/cancelAnimationFrame}
+     * @see [Similar to]{@link https://developer.mozilla.org/en-US/docs/Webhttp://kuanke.smartqmx.com/api/window/cancelAnimationFrame}
      */
 
 
@@ -4825,7 +4825,7 @@
    * @property {time-ranges:indexFunction} end
    *           Returns the time offset at which a specified time range ends.
    *
-   * @see https://developer.mozilla.org/en-US/docs/Web/API/TimeRanges
+   * @see https://developer.mozilla.org/en-US/docs/Webhttp://kuanke.smartqmx.com/api/TimeRanges
    */
 
   /**
@@ -10669,7 +10669,7 @@
      * @return {string}
      *         'probably', 'maybe', or empty string
      *
-     * @see [Spec]{@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/canPlayType}
+     * @see [Spec]{@link https://developer.mozilla.org/en-US/docs/Webhttp://kuanke.smartqmx.com/api/HTMLMediaElement/canPlayType}
      *
      * @abstract
      */
@@ -27292,7 +27292,7 @@
      * events as they arrive.
      *
      * @param {Stream} destination the stream that will receive all `data` events
-     * @see http://nodejs.org/api/stream.html#stream_readable_pipe_destination_options
+     * @see http://nodejs.orghttp://kuanke.smartqmx.com/api/stream.html#stream_readable_pipe_destination_options
      */
 
     Stream.prototype.pipe = function pipe(destination) {
@@ -30798,7 +30798,7 @@
    * @param destination {stream} the stream that will receive all `data` events
    * @param autoFlush {boolean} if false, we will not call `flush` on the destination
    *                            when the current stream emits a 'done' event
-   * @see http://nodejs.org/api/stream.html#stream_readable_pipe_destination_options
+   * @see http://nodejs.orghttp://kuanke.smartqmx.com/api/stream.html#stream_readable_pipe_destination_options
    */
   Stream$1.prototype.pipe = function (destination) {
     this.on('data', function (data) {
@@ -36135,8 +36135,8 @@
   /**
     * Parses out inband captions from an MP4 container and returns
     * caption objects that can be used by WebVTT and the TextTrack API.
-    * @see https://developer.mozilla.org/en-US/docs/Web/API/VTTCue
-    * @see https://developer.mozilla.org/en-US/docs/Web/API/TextTrack
+    * @see https://developer.mozilla.org/en-US/docs/Webhttp://kuanke.smartqmx.com/api/VTTCue
+    * @see https://developer.mozilla.org/en-US/docs/Webhttp://kuanke.smartqmx.com/api/TextTrack
     * Assumes that `probe.getVideoTrackIds` and `probe.timescale` have been called first
     *
     * @param {Uint8Array} segment - The fmp4 segment containing embedded captions
@@ -37705,7 +37705,7 @@
      * events as they arrive.
      *
      * @param {Stream} destination the stream that will receive all `data` events
-     * @see http://nodejs.org/api/stream.html#stream_readable_pipe_destination_options
+     * @see http://nodejs.orghttp://kuanke.smartqmx.com/api/stream.html#stream_readable_pipe_destination_options
      */
 
     Stream.prototype.pipe = function pipe(destination) {
@@ -40727,7 +40727,7 @@
        * @param destination {stream} the stream that will receive all `data` events
        * @param autoFlush {boolean} if false, we will not call `flush` on the destination
        *                            when the current stream emits a 'done' event
-       * @see http://nodejs.org/api/stream.html#stream_readable_pipe_destination_options
+       * @see http://nodejs.orghttp://kuanke.smartqmx.com/api/stream.html#stream_readable_pipe_destination_options
        */
       Stream.prototype.pipe = function (destination) {
         this.on('data', function (data) {
@@ -45899,8 +45899,8 @@
       /**
         * Parses out inband captions from an MP4 container and returns
         * caption objects that can be used by WebVTT and the TextTrack API.
-        * @see https://developer.mozilla.org/en-US/docs/Web/API/VTTCue
-        * @see https://developer.mozilla.org/en-US/docs/Web/API/TextTrack
+        * @see https://developer.mozilla.org/en-US/docs/Webhttp://kuanke.smartqmx.com/api/VTTCue
+        * @see https://developer.mozilla.org/en-US/docs/Webhttp://kuanke.smartqmx.com/api/TextTrack
         * Assumes that `probe.getVideoTrackIds` and `probe.timescale` have been called first
         *
         * @param {Uint8Array} segment - The fmp4 segment containing embedded captions
@@ -46168,7 +46168,7 @@
           // transfer ownership of the underlying ArrayBuffer
           // instead of doing a copy to save memory
           // ArrayBuffers are transferable but generic TypedArrays are not
-          // @link https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers#Passing_data_by_transferring_ownership_(transferable_objects)
+          // @link https://developer.mozilla.org/en-US/docs/Webhttp://kuanke.smartqmx.com/api/Web_Workers_API/Using_web_workers#Passing_data_by_transferring_ownership_(transferable_objects)
           var initArray = segment.initSegment;
 
           segment.initSegment = {
@@ -47168,7 +47168,7 @@
        * can transmux them before we append them to our internal
        * native source buffers in the correct format.
        *
-       * @link https://developer.mozilla.org/en-US/docs/Web/API/SourceBuffer/appendBuffer
+       * @link https://developer.mozilla.org/en-US/docs/Webhttp://kuanke.smartqmx.com/api/SourceBuffer/appendBuffer
        * @param {Uint8Array} segment the segment to append to the buffer
        */
 
@@ -47229,7 +47229,7 @@
        * Emulate the native mediasource function and remove parts
        * of the buffer from any of our internal buffers that exist
        *
-       * @link https://developer.mozilla.org/en-US/docs/Web/API/SourceBuffer/remove
+       * @link https://developer.mozilla.org/en-US/docs/Webhttp://kuanke.smartqmx.com/api/SourceBuffer/remove
        * @param {Double} start position to start the remove at
        * @param {Double} end position to end the remove at
        */
@@ -47418,7 +47418,7 @@
        * Emulate the native mediasource function. abort any soureBuffer
        * actions and throw out any un-appended data.
        *
-       * @link https://developer.mozilla.org/en-US/docs/Web/API/SourceBuffer/abort
+       * @link https://developer.mozilla.org/en-US/docs/Webhttp://kuanke.smartqmx.com/api/SourceBuffer/abort
        */
 
     }, {
@@ -47448,7 +47448,7 @@
    * Our MediaSource implementation in HTML, mimics native
    * MediaSource where/if possible.
    *
-   * @link https://developer.mozilla.org/en-US/docs/Web/API/MediaSource
+   * @link https://developer.mozilla.org/en-US/docs/Webhttp://kuanke.smartqmx.com/api/MediaSource
    * @class HtmlMediaSource
    * @extends videojs.EventTarget
    */
@@ -47721,7 +47721,7 @@
       /**
        * Add a source buffer to the media source.
        *
-       * @link https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/addSourceBuffer
+       * @link https://developer.mozilla.org/en-US/docs/Webhttp://kuanke.smartqmx.com/api/MediaSource/addSourceBuffer
        * @param {String} type the content-type of the content
        * @return {Object} the created source buffer
        */
@@ -47822,7 +47822,7 @@
    * native and non-native functionality. returns an instance of
    * HtmlMediaSource.
    *
-   * @link https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/MediaSource
+   * @link https://developer.mozilla.org/en-US/docs/Webhttp://kuanke.smartqmx.com/api/MediaSource/MediaSource
    */
   var MediaSource = function MediaSource() {
     this.MediaSource = {
@@ -47844,7 +47844,7 @@
    * A wrapper around the native URL for our MSE object
    * implementation, this object is exposed under videojs.URL
    *
-   * @link https://developer.mozilla.org/en-US/docs/Web/API/URL/URL
+   * @link https://developer.mozilla.org/en-US/docs/Webhttp://kuanke.smartqmx.com/api/URL/URL
    */
   var URL$1 = {
     /**
@@ -47852,7 +47852,7 @@
      * This function maps a native or emulated mediaSource to a blob
      * url so that it can be loaded into video.js
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL
+     * @link https://developer.mozilla.org/en-US/docs/Webhttp://kuanke.smartqmx.com/api/URL/createObjectURL
      * @param {MediaSource} object the object to create a blob url to
      */
     createObjectURL: function createObjectURL(object) {
@@ -52473,7 +52473,7 @@
          * events as they arrive.
          *
          * @param {Stream} destination the stream that will receive all `data` events
-         * @see http://nodejs.org/api/stream.html#stream_readable_pipe_destination_options
+         * @see http://nodejs.orghttp://kuanke.smartqmx.com/api/stream.html#stream_readable_pipe_destination_options
          */
 
         Stream.prototype.pipe = function pipe(destination) {

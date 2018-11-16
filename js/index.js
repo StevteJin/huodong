@@ -13,7 +13,7 @@ $(function () {
             //请求主页数据
             $.ajax({
                 type : "GET",
-                url : "/api/bbs/"+id,
+                url : "http://kuanke.smartqmx.com/api/bbs/"+id,
                 success : function (result) {
                     /*顶部大图*/
                     var topImgUrl=result.data.cur.image;
@@ -84,7 +84,7 @@ $(function () {
             //请求主页数据
             $.ajax({
                 type : "GET",
-                url : "/api/bbs",
+                url : "http://kuanke.smartqmx.com/api/bbs",
                 success : function (result) {
                     /*顶部大图*/
                     var topImgUrl=result.data.cur.image;
@@ -175,7 +175,7 @@ $(function () {
     //新闻列表
     $.ajax({
         type : "GET",
-        url : "/api/News/newsList",
+        url : "http://kuanke.smartqmx.com/api/News/newsList",
         success : function (result) {
            var newsContent=result.data;
            var data = {
@@ -188,7 +188,7 @@ $(function () {
     //底部新闻
     $.ajax({
         type : "GET",
-        url : "/api/News/article_url",
+        url : "http://kuanke.smartqmx.com/api/News/article_url",
         success : function (result) {
            var dContent=result.data;
            var data = {
